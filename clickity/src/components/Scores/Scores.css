@@ -1,0 +1,11 @@
+.headerBar{
+    background-color: #000000;
+    color: white;
+}
+.bestScore, .score{
+    font-size:30px;
+    margin:20px;
+}
+.alignCenter{
+    text-align:center;
+}
