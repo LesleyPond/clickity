@@ -4,5 +4,7 @@ width:175px;
 margin:10px;
 float:left;
 border:solid 1px black;
-
+transition: all .2s ease-in-out;
 }
+
+.characterImage:hover { transform: scale(1.1); }

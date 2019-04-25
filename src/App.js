@@ -6,6 +6,7 @@ import CharacterArray from './CharacterArray.json';
 import Character from './components/characters/Character';
 import './App.css';
 
+
 const clickedArray =[]
 class App extends React.Component {
   state={
@@ -29,6 +30,9 @@ class App extends React.Component {
   
   };
 clicked = (id) => {
+  if(this.state.topScore === 12){
+    alert("You beat the game!!")
+  }
   if(clickedArray.includes(id)){
       if(this.state.score >= this.state.topScore){
          this.setState({
@@ -39,7 +43,7 @@ clicked = (id) => {
       clickedArray.length = 0
       alert(`you scored ${this.state.score}!`)
     }
-      else if(this.state.score < this.state.topScore)
+      else if(this.state.score < this.state.topScore){
       this.setState({
       CharacterArray: this.state.CharacterArray,
       topScore: this.state.topScore,
@@ -47,6 +51,7 @@ clicked = (id) => {
       })
       clickedArray.length = 0
       alert(`you scored ${this.state.score}!`)
+    }
   }
   else{
     clickedArray.push(id);
@@ -69,6 +74,7 @@ clicked = (id) => {
       </div>
       
       <CharacterContainer>
+        
       <Scores topScore={this.state.topScore} score={this.state.score}/>
       {this.state.CharacterArray.map(character => (
         <div key={character.id} onClick={()=>this.clicked(character.id)}>
