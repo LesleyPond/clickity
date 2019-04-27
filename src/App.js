@@ -13,7 +13,7 @@ class App extends React.Component {
     CharacterArray,
     topScore: 0,
     score: 0,
-  
+    animate: ""
   }
 
   shuffleArray = () =>{
@@ -24,8 +24,6 @@ class App extends React.Component {
   }
   this.setState({
     CharacterArray: newOrder,
-    topScore: this.state.topScore,
-    score: this.state.score
   })
   
   };
@@ -34,36 +32,46 @@ clicked = (id) => {
     alert("You beat the game!!")
   }
   if(clickedArray.includes(id)){
+    this.animate()
       if(this.state.score >= this.state.topScore){
          this.setState({
-        CharacterArray: this.state.CharacterArray,
         topScore: this.state.score,
         score: 0
       })
       clickedArray.length = 0
-      alert(`you scored ${this.state.score}!`)
+     
     }
       else if(this.state.score < this.state.topScore){
       this.setState({
-      CharacterArray: this.state.CharacterArray,
-      topScore: this.state.topScore,
       score: 0
       })
       clickedArray.length = 0
-      alert(`you scored ${this.state.score}!`)
+      
     }
+    
   }
   else{
     clickedArray.push(id);
     this.setState({
-      CharacterArray: this.state.CharacterArray,
-      topScore: this.state.topScore,
       score: this.state.score +1
     })
     console.log(this.state.score)
   }
- 
- 
+}
+
+animate = () =>{
+  const animate = "animated";
+  this.setState({
+    animate: animate
+  })
+  setTimeout(this.deAnimate, 1000);
+  
+}
+deAnimate = ()=>{
+  const deAnimate = "";
+    this.setState({
+      animate: deAnimate
+    })
 }
   render(){
     return (
@@ -73,7 +81,7 @@ clicked = (id) => {
       <img alt="Bob's Burgers" className="mainPic mx-auto d-block" src='images/characters1.jpg'></img>
       </div>
       
-      <CharacterContainer>
+      <CharacterContainer >
         
       <Scores topScore={this.state.topScore} score={this.state.score}/>
       {this.state.CharacterArray.map(character => (
@@ -83,7 +91,7 @@ clicked = (id) => {
             key={character.id}
             image={character.image}
             shuffleCards={this.shuffleArray}
-            
+            animate ={this.state.animate}
           />
           </div>
         ))}

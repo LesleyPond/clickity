@@ -5,7 +5,7 @@ function Character(props){
 
     return(
         <div>
-        <img alt="Character" src={props.image} className={`characterImage ${props.clickedOrNot}`}onClick={props.shuffleCards}/>
+        <img alt="Character" src={props.image} className={`characterImage jello ${props.animate} ${props.clickedOrNot}`} onClick={props.shuffleCards}/>
         </div>
     )
   
