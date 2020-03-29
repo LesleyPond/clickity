@@ -3,13 +3,13 @@ import './Scores.css';
 
 function Scores(props) {
 return(
-<>
-<div className="alignCenter">
-  <span className="score">Current Score:{props.score}</span>
-  
-  <span className="bestScore">Your Best Score:{props.topScore}</span>
-  </div>
-</>
+      <>
+      <div className="align-center">
+      <span className="score">Current Score:{props.score}</span>
+      <br></br>
+      <span className="bestScore">Your Best Score:{props.topScore}</span>
+      </div>
+      </>
 )
 }
 

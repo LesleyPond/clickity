@@ -1,4 +1,13 @@
-.mainPic{
-    max-height:400px;
-    
+.title {
+    text-align: center;
+    margin: 20px;
+    font-family: 'Cute Font', cursive;
+    font-size: 60px;
+}
+
+.title2 {
+    font-size: 45px;
+    font-family: 'Cute Font', cursive;
+    text-align: center;
+    margin: 20px;
 }

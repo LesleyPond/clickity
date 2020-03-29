@@ -1,11 +1,17 @@
-.headerBar{
+.headerBar {
     background-color: #000000;
     color: white;
 }
-.bestScore, .score{
-    font-size:30px;
-    margin:20px;
+
+.bestScore,
+.score {
+    font-size: 30px;
+    margin: 20px;
+    text-align: center;
+    font-family: 'Cute Font', cursive;
+    font-size: 40px;
 }
-.alignCenter{
-    text-align:center;
+
+.align-center {
+    text-align: center;
 }
